@@ -1,0 +1,24 @@
+{
+  "name": "codebase-weather",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Repository health rendered as an animated weather map",
+  "author": "Ata Perata",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "analyzer",
+    "web"
+  ],
+  "scripts": {
+    "analyze": "npm run analyze -w analyzer --",
+    "demo": "npm run demo -w analyzer",
+    "test": "npm test -w analyzer && npm test -w web",
+    "typecheck": "npm run typecheck -w analyzer && npm run typecheck -w web",
+    "build": "npm run build -w web",
+    "dev": "npm run dev -w web",
+    "preview": "npm run preview -w web"
+  }
+}
