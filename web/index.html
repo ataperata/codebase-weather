@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Codebase Weather</title>
+    <meta
+      name="description"
+      content="Git repository health as an animated weather map: churn storms, complexity fronts, bug-fix rain, and ownership territories."
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="brand">
+          <p class="eyebrow" id="eyebrow">Station 04W · Git history</p>
+          <h1>Codebase Weather</h1>
+        </div>
+        <div class="now">
+          <p class="kicker" id="kicker">Forecast window</p>
+          <p class="nowcast" id="nowcast">Reading the station log…</p>
+        </div>
+        <div class="actions">
+          <button type="button" class="ghost" id="demo">Sample</button>
+          <label class="ghost file-btn">
+            Open dataset
+            <input id="file" type="file" accept="application/json,.json" hidden />
+          </label>
+        </div>
+      </header>
+      <main>
+        <section id="stage" aria-label="Weather map">
+          <canvas id="map"></canvas>
+          <p class="cartouche">Land sized by lines of code · color is who wrote it</p>
+          <div id="tooltip" class="tooltip" hidden></div>
+        </section>
+        <aside id="briefing" aria-live="polite">
+          <p class="section-label">Season outlook</p>
+          <h2 id="outlook">—</h2>
+          <p id="summary"></p>
+          <div class="frame-copy">
+            <p class="section-label">This frame</p>
+            <p id="frame-copy"></p>
+          </div>
+          <p class="section-label">Risk hotspots</p>
+          <div id="hotspots"></div>
+          <p class="section-label">Legend</p>
+          <ul id="legend" class="legend"></ul>
+          <p id="metrics" class="metrics"></p>
+        </aside>
+      </main>
+      <footer class="timeline">
+        <button type="button" id="play" aria-pressed="false">Play</button>
+        <div class="scrub">
+          <canvas id="spark" aria-hidden="true"></canvas>
+          <input id="range" type="range" min="0" max="0" value="0" aria-label="Forecast timeline" />
+        </div>
+        <p id="readout" class="readout"></p>
+        <div class="speeds" role="group" aria-label="Playback speed">
+          <button type="button" data-speed="1" aria-pressed="true">1×</button>
+          <button type="button" data-speed="2" aria-pressed="false">2×</button>
+          <button type="button" data-speed="4" aria-pressed="false">4×</button>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
